@@ -167,6 +167,7 @@ export interface IMChannelConnectOpts {
   onWeChatConnectionStateChange?: (state: WeChatConnectionState) => void;
 }
 
+// 发送文件、流式卡片等能力为可选项；调用方应先确认适配器提供对应方法。
 export interface IMChannel {
   readonly channelType: string;
   connect(opts: IMChannelConnectOpts): Promise<boolean>;
