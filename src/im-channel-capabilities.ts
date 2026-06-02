@@ -96,6 +96,7 @@ export function getImChannelCapabilities(
   return channelType ? IM_CHANNEL_CAPABILITIES[channelType] : undefined;
 }
 
+// 渠道支持话题映射还不够，当前会话也必须提供话题能力元数据。
 export function isThreadMapCapableChat(info?: {
   channel_type?: string | null;
   chat_mode?: string | null;
