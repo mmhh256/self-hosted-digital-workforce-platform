@@ -83,6 +83,7 @@ export function extractProviderTarget(jid: string): string {
 }
 
 /** Stable registered-group JID: account + external chat, excluding thread/root. */
+// 会话归属键保留账号范围并去掉话题锚点，避免同群不同话题被误认作不同归属。
 export function channelConversationJid(jid: string): string {
   const parsed = parseChannelAddress(jid);
   if (!parsed) return jid.split('#')[0];
