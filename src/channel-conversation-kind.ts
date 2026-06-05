@@ -22,6 +22,7 @@ function baseConversationJid(jid: string): string {
   return jid.split('#', 1)[0];
 }
 
+// 飞书私聊与群聊可能使用同形态 ID，应依据元数据分类，不能仅凭 JID 猜测。
 export function resolveChannelConversationKind(
   jid: string,
   metadata: ChannelConversationMetadata = {},
