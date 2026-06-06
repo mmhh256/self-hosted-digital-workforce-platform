@@ -120,6 +120,7 @@ export async function evaluateChannelAdmission(
  * binding and therefore fail-closed; only standalone connectors without a
  * resolver may persist directly under the source JID.
  */
+// 已配置解析器却返回空路由时应拒绝继续处理，不能绕过失效绑定直接写入来源会话。
 export function resolveAdmittedChannelRoute<TContext = undefined>(
   sourceJid: string,
   resolver?: (jid: string, context?: TContext) => ChannelRouteTarget | null,
