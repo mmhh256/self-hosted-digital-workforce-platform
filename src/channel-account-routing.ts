@@ -34,6 +34,7 @@ export function resolveChannelAccountFallbackWorkspace(
  * can skip persistence — every inbound message funnels through this path, and
  * an unconditional setRegisteredGroup costs ~10 statements per message.
  */
+// 账号默认工作区仅用于注册兜底，后续消息不能覆盖用户显式选择的绑定。
 export function applyChannelAccountRegistrationFallback(
   group: RegisteredGroup,
   accountId: string,
