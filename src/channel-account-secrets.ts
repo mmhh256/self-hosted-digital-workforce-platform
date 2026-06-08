@@ -51,6 +51,7 @@ function getOrCreateKey(): Buffer {
   }
 }
 
+// 先校验引用格式再拼接文件路径，避免将外部提供的引用当作任意路径使用。
 function refToPath(secretRef: string): string {
   if (!SAFE_REF_RE.test(secretRef)) throw new Error('Invalid secret reference');
   return path.join(
