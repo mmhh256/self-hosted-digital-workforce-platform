@@ -14,6 +14,7 @@ export interface ChannelAccountCredentialTestResult {
   error?: string;
 }
 
+// 不支持独立探测的渠道返回 unsupported；缺少探测能力不等于凭据校验成功。
 export async function testChannelAccountCredentials(
   account: ChannelAccount,
   secret: ChannelAccountSecret,
