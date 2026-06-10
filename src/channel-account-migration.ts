@@ -18,6 +18,7 @@ import {
   type ChannelAccountSecret,
 } from './channel-account-secrets.js';
 
+// 旧绑定回填同时限制所有者、渠道与旧地址格式，不接管已有账号归属的群。
 export function ensureLegacyDefaultChannelAccount(input: {
   ownerUserId: string;
   provider: ChannelProvider;
