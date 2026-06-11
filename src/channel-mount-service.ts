@@ -22,6 +22,7 @@ import {
 } from './db.js';
 import { getWebDeps } from './web-context.js';
 
+// 将会话与工作区查找能力显式注入，使挂载解析可以使用同一组归属查询。
 export interface ChannelMountResolutionDeps {
   getAgent: (
     sessionId: string,
