@@ -8,6 +8,7 @@ export interface NativeThreadContext {
 
 const TITLE_MAX_LENGTH = 48;
 
+// 使用首个非空行生成标题并限制长度，避免将整段消息直接用作导航名称。
 export function summarizeNativeThreadTitle(value?: string): string {
   const firstLine = (value || '')
     .split(/\r?\n/)
