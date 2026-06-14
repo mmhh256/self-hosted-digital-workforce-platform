@@ -14,6 +14,7 @@ export interface ChannelCardFinalizationResult {
  * "complete was attempted": only a resolved provider terminal operation may
  * advance a Turn/cursor.
  */
+// 前置投递未确认时只尝试中止卡片；调用过完成接口本身不能视为已确认成功。
 export async function finalizeChannelCardAfterDelivery(
   card: FinalizableChannelCard,
   text: string,
