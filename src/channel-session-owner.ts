@@ -14,6 +14,7 @@ import { channelConversationJid } from './channel-address.js';
  * top-level messages. Crossing to a different conversation, account or provider
  * still keeps the original owner.
  */
+// 同一渠道会话内允许更新回复锚点，跨账号或跨会话输入不能静默转移原有归属。
 export function resolveStickyChannelOwner(
   currentOwnerJid: string | null,
   incomingSourceJid: string | null,
