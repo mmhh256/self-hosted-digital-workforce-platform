@@ -31,6 +31,7 @@ import type {
 } from './feishu-streaming-card.js';
 import { logger } from './logger.js';
 
+// 租赁与心跳分别控制持有时限和续租频率；初始化时还会限制心跳不超过租期的一半。
 const DEFAULT_LEASE_MS = 45_000;
 const DEFAULT_HEARTBEAT_MS = 12_000;
 
