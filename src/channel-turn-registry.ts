@@ -6,6 +6,7 @@ export interface ActiveChannelTurn {
   context: ChannelTurnContext;
 }
 
+// 主会话沿用工作区键，独立会话追加命名空间，避免并发会话共享同一个活动轮次槽位。
 export function channelTurnScope(
   folder: string,
   agentId?: string | null,
