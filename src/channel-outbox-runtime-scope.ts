@@ -142,6 +142,7 @@ export function stableChannelOutboxOrdinal(operationKey: string): number {
  * Callers may supply an explicit slot only when two identical payloads are
  * intentionally distinct outputs in the same turn.
  */
+// 幂等键包含账号、目标和消息内容，防止工具重试产生新请求 ID 后重复执行同一外发。
 export function semanticChannelOutboxIdentity(input: {
   route: ChannelRouteSnapshot;
   kind: ChannelOutboxKind;
