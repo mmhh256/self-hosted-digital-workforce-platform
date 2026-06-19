@@ -404,6 +404,7 @@ export async function deliverChannelOutboxItem(
 }
 
 /** Run once after transports connect and before new outbox workers start. */
+// 恢复在渠道连接完成后、启动新投递工作前执行，先收敛上一轮遗留的过期状态。
 export function reconcileChannelOutboxDeliveries(now?: Date | string): {
   retryable: number;
   uncertain: number;
