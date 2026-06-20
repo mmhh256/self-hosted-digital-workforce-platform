@@ -70,6 +70,7 @@ export type StreamingCardStatus =
   | 'aborted'
   | 'failed';
 
+// 入站、执行轮次与外发记录共享路由快照结构，恢复流程据此识别原始渠道与账号。
 export interface ChannelRouteSnapshot {
   provider: string;
   accountId: string;
