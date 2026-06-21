@@ -20,6 +20,7 @@ export interface StreamingCardReconciler {
   }>;
 }
 
+// 实时恢复受启动积压时间边界约束，避免将当前正常运行的任务纳入旧任务恢复。
 interface ReconciliationPassOptions {
   /** Startup may fence every row present before inbound is resumed. */
   mode: 'startup' | 'live';
