@@ -23,6 +23,7 @@ import {
   DefinitiveFeishuCapabilityError,
 } from './feishu-capability.js';
 
+// 能力变更输入同时携带路由快照和轮次 ID，使外部副作用能够关联到持久化投递记录。
 export interface DeliverFeishuCapabilityMutationInput extends ChannelRouteSnapshot {
   turnRunId: string;
   requestId?: string;
