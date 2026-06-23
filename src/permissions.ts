@@ -49,6 +49,7 @@ export const ROLE_DEFAULT_PERMISSIONS: Record<UserRole, Permission[]> = {
   member: [],
 };
 
+// 权限输入只接受已声明的字符串并去重，未知值不能直接进入用户权限集合。
 export function normalizePermissions(input: unknown): Permission[] {
   if (!Array.isArray(input)) return [];
   const set = new Set<Permission>();
