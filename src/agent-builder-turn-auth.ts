@@ -18,6 +18,7 @@ export interface AgentBuilderTurnContext {
  * The main session retains the historical folder key; conversation sessions
  * get their own namespace so concurrent chats cannot borrow confirmations.
  */
+// 所有者确认也要按运行会话隔离，不能让同工作区内另一个对话借用确认结果。
 export function agentBuilderTurnScope(
   folder: string,
   runtimeAgentId?: string | null,
