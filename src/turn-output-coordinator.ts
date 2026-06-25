@@ -6,6 +6,7 @@ import { isRedundantProactiveSdkClosure } from './proactive-final-classifier.js'
  * User-visible delivery semantics are deliberately owned by the Miniclaw
  * host, not inferred from the fact that an MCP tool happened to run.
  */
+// 进度、最终答复与独立消息使用不同投递角色，工具产生输出并不自动代表最终答复已送达。
 export type TurnMessageDeliveryRole = 'progress' | 'final' | 'separate';
 
 export interface TurnOutputStreamEvent {
