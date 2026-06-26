@@ -37,6 +37,7 @@ export interface ResolveTurnOutcomeInput {
   deterministicFailure?: boolean;
 }
 
+// 没有健康完成或已投递答复的异常退出应保留游标，便于后续重试而不是直接确认消费。
 export function resolveTurnOutcome(
   input: ResolveTurnOutcomeInput,
 ): TurnOutcome {
