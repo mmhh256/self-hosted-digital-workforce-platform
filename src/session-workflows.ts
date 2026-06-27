@@ -480,6 +480,7 @@ function mergeRecoveredUsage(
   });
 }
 
+// 缓存键区分工作区、Agent 与会话，文件签名变化后重新加载该会话的工作流快照。
 export function loadSessionWorkflowRuns(input: {
   groupFolder: string;
   agentId: string | null;
