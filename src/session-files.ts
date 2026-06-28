@@ -12,6 +12,7 @@ import path from 'path';
 import { DATA_DIR } from './config.js';
 import { logger } from './logger.js';
 
+// 清理仅针对选定会话的运行目录并保留 settings.json，单个文件失败不会阻止其他条目清理。
 export function clearSessionFiles(folder: string, agentId?: string): void {
   const claudeDir = agentId
     ? path.join(DATA_DIR, 'sessions', folder, 'agents', agentId, '.claude')
