@@ -48,6 +48,7 @@ function foldLegacyWorkspaceJid(
  *
  * Returns null when the chat has no binding, so callers keep their own fallback.
  */
+// 输出归属查询优先采用标准挂载记录，仅做解析，不应在读取归属时创建或修改路由。
 export function resolveBoundWorkspaceJid(
   chatJid: string,
   deps: WorkspaceAttributionDeps,
